@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+html { 
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family:t100f;
+    font-weight:bold;
+    font-size:17;
+    background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.header {
+    border-style:none;
+    overflow: hidden;
+    padding: 20px 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:apu;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header a:hover {
+    color: black;
+}
+
+.sidenav {
+    border-style: solid;
+    width: 250px;
+    min-height: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.2);
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.main {
+    text-align: center;
+    background-color:rgba(0,0,0,0.2);
+    margin-left: 250px; /* Same as the width of the sidenav */
+    border-style: solid;
+    min-width: 900px;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.list_title {
+    color:white;
+    text-decoration: underline;
+}
+
+.actions_list {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    list-style-type: none;
+    color: #818181;
+    display: block;
+}
+
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:90%;
+    color: black !important;
+}
+input[type="button"].button-menu
+{
+    margin: 4px 2px;
+    cursor: pointer;
+    width:90%;
+    color: black !important;
+}
+
+/*css for catalog table views*/
+#catalog_title
+{
+    font-family:apu;
+    font-weight:bold;
+    font-size:30px;
+    padding-top: 15px;
+}
+
+select#catalog_select
+{
+    margin-top:25px;
+    width:20%;
+}
+
+.table_title
+{
+    font-family:apu;
+    text-align:left;
+    font-size:20px;
+    padding-bottom: 13px;
+}
+
+tr td
+{
+    font-family:t100f;
+    font-weight:bold;
+    text-align:left;
+    border-style:solid;
+    border-color:black;
+    padding:5px;
+    color:black;
+    background: white;
+}
+
+tr:first-child td
+{
+    background: #A5D6D9;
+}
+
+table tr.row_header
+{
+    font-size:22px;
+    font-weight:bold;
+}
+
+table
+{
+    width:97%;
+}
+
+tr:not(:first-child):hover td
+{
+    background-color: #BFDDE0;
+}
+
+img
+{
+    width: 64px;
+    height: 64px;
+}

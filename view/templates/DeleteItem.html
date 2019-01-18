@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Search</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/deleteItem_style.css">
+</head>
+<body>
+	<form method="post" style="border:1px solid #ccc">
+  		<div class="container">
+			<h1>Delete an Item</h1>
+			<p>
+             	<label for="id">Please Enter the Item id you want to delete</label>
+             	<br>
+             	<input type="number" class="numberFieldStyle" name="id" placeholder="Enter the Item ID" required>
+          	</p>	
+               <button class="button" type="submit" formmethod="post">Delete</button>
+  		</div>
+	</form>
+</body>
+</html>
+{% endblock %}

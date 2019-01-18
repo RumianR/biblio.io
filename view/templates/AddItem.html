@@ -1,0 +1,222 @@
+{% extends 'home.html' %}
+{% block content %}
+<html>
+<head>
+	<title>Add an Item</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/addItem_style.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$( "#myList" ).change(function() {
+				if(this.value == "1"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();	
+				}
+				if(this.value == "2"){
+					$('#display_Book').show();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();	
+				}
+				if(this.value == "3"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').show();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();
+				}
+				if(this.value == "4"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').show();
+     				$('#display_Musics').hide();
+				}
+				if(this.value == "5"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').show();
+				}
+  				
+			});
+	
+	  });
+	</script>
+</head>
+
+<body>
+	<form style="border:1px solid #ccc">
+  		<div class="container">
+			<h1>Add an Item</h1>
+			<p>
+             	<label>Please Select the item you want to Add</label>
+             	<br>
+             	<select id = "myList" class="dropdown dropdownStyle" name="myList" >
+               		<option class="dropdownMenu" value="1" selected>--- Please Select an Item ---</option>
+               		<option class="dropdownMenu" id = "Book" value = "2">Book</option>
+               		<option class="dropdownMenu" id = "Magazine" value = "3">Magazine</option>
+               		<option class="dropdownMenu" id = "Movies" value = "4">Movies</option>
+               		<option class="dropdownMenu" id = "Musics" value = "5">Musics</option>
+             	</select>
+          	</p>
+          	<div id="display_Book" style="display: none">
+          		<p>Please enter following field to add a --- BOOK </p>
+          		<form name="book" method="post">
+                  <table class="tableAlignment">
+                    <tr>
+          			         <td><label class="labelStyle" for="title">Title : </label></td>
+                              <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="author">Author : </label></td>
+                              <td><input class="textFieldStyle" placeholder="Enter Author Name" type="text"  name="author" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="num_pages">Number of pages : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter Number of Pages" name="num_pages" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="publisher">Publisher : </label></td>
+                              <td><input class="textFieldStyle" type="text" placeholder="Enter Publisher" name="publisher" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="year_published">Year Published : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter Year Published" name="year_published" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="language">Language : </label></td>
+                         <td><input class="textFieldStyle" type="text" placeholder="Enter Language" name="language" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="isbn_10">ISBN 10 : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter ISBN 10" name="isbn_10" required/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="isbn_13">ISBN 13 : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter ISBN 13" name="isbn_13" required/></td>
+                    </tr> 
+                    </table>
+                         <input name="media_type" value="BOOK" style="display: none"></br>
+                         <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Book</button>
+          		</form>
+          	</div>
+			  <div id ="display_Magazine" style="display: none">
+				<p>Please enter following field to add a --- MAGAZINE </p>
+          		<form name="magazine" method="post">
+                 <table class="tableAlignment">
+                     <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="publisher">Publisher : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Publisher" type="text" name="publisher" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="year_published">Year Published : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Year Published" type="text" name="year_published" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="language">Language : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Language" type="text" name="language" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="isbn_10">ISBN 10 : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ISBN 10" type="text" name="isbn_10" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="isbn_13">ISBN 13 : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ISBN 13" type="text" name="isbn_13" required/></td>
+                    </tr> 
+                    </table>
+                        <input name="media_type" value="MAGAZINE" style="display: none"></br>
+                        <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Magazine</button>
+                    </form>         		
+          	</div>
+          	<div id="display_Movies" style="display: none">
+          		<p>Please enter following field to add a  --- MOVIE</p>
+          		<form name="movie" method="post">
+                <table class="tableAlignment">
+                    <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="director">Director : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Director Name" type="text" name="director" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="producer">Producer : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Producer Name" type="text" name="producer" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="actors">Actors : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Actors Name" type="text" name="actors" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="language">Langugage : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Langugage" type="text" name="languages" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="subtitles">Subtitles : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Subtitles" type="text" name="subtitles" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="dubbed">Dubbed : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Dubbed" type="text" name="dubbed" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="release_date">Release Date : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="runtime">Runtime : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Runtime" type="text" name="runtime" required/></td>
+                    </tr> 
+                    </table>
+                        <input name="media_type" value="MOVIE" style="display: none"></br>
+                        <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Movie</button>
+                    </form>
+          	</div>
+          	<div id="display_Musics" style="display: none">
+          		<p>Please enter following field to add a --- MUSIC</p>
+          		<form name="music" method="post">
+                  <table class="tableAlignment">
+                    <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="mediaType">Media Type : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Media Type" type="text" name="mediaType"></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="release_date">Release Date : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="artist">Artist : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Artist Name" type="text" name="artist" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="label">Label : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter FLabel" type="text" name="label" required/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="asin">ASIN : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ASIN" type="text" name="asin" required/></td>
+                    </tr> 
+                    </table>
+                        <input name="media_type" value="MUSIC" style="display: none"></br>
+                        <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Music</button>
+                    </form>
+          	</div>	
+  		</div>
+	</form>
+<h1 style="color: green">{% if success %}
+                    Item added successfully {%endif %}</h1>
+</body>
+</html>
+{% endblock %}

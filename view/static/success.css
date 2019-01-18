@@ -1,0 +1,44 @@
+html {
+  background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
+  background-size: cover;
+  height: 50%;
+  overflow: hidden;
+}
+
+.container {
+  text-align:center;
+  font-family:apu;
+}
+
+.container.titles {
+  font-size: 50px;
+  font-stretch:expanded
+}
+
+.container.sub_titles {
+  font-family:t100f;
+  font-size:45px;
+  position:relative;
+  bottom:75px;
+  color: rgb(58, 19, 167);
+  font-weight:bold;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:90%;
+    color: black !important;
+}
+.label_text {
+  font-family:tb;
+  opacity:1;
+}
+
+#user_login_redirect {
+  font-family:tb;
+  font-size:50px;
+  position:relative;
+  bottom:35px;
+}

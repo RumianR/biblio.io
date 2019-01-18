@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Bibli.io</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='home_stylesheet.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fonts.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        {% block extrahead %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="sidenav">
+            <div class="header">
+                <a href="/" class="logo"><h1>Welcome to Bibli.io</h1></a>
+                <p>Logged in as: {{ request.cookies.get('username') }}</p>
+            </div>
+            <div class="navlist">
+                <ul class="actions_list">
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Catalog"
+                            onclick="window.location.href='{{ url_for('home') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Search"
+                            onclick="window.location.href='{{ url_for('search') }}'" />
+                        </form>
+                    </li>
+                </ul>
+                {% if not is_admin %}
+                <p class="list_title">User Actions</p>
+                <ul class="actions_list">
+                    <li>
+                        <form >
+                            <input class="button-menu" type="button" value="View Active Loans"
+                            onclick="window.location.href='{{ url_for('active_loans') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Make Loan"
+                            onclick="window.location.href='{{ url_for('loan') }}'" />
+                        </form>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% if is_admin %}
+                <p class="list_title">Administrator Actions</p>
+                <ul class="actions_list">
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Add Library Record"
+                            onclick="window.location.href='{{ url_for('add_item') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Edit Library Record" 
+                            onclick="window.location.href='{{ url_for('editItem') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Remove Library Record"
+                            onclick="window.location.href='{{ url_for('deleteItem') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Process Return"
+                            onclick="window.location.href='{{ url_for('return_item') }}'" />
+                        </form>
+                    </li>
+
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Register Administrator"
+                            onclick="window.location.href='{{ url_for('registeradmin') }}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="View Active User Count"
+                            onclick="window.location.href='{{ url_for('active_users') }}'" />
+                        </form>
+                    </li>
+                </ul>
+                {% endif %}
+                <p class="list_title">Exit</p>
+                <ul class="actions_list">
+                    <li><button class="button button-menu" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+          <div id="content" class="col-sm-10">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+    </body>
+</html>

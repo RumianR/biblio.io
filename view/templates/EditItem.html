@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit an Item</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/editItem_style.css">
+</head>
+
+<body>
+	<form method="POST" style="border:1px solid #ccc">
+  		<div class="container">
+			<h1>Edit an Item</h1>
+               <p>
+               <label>Please Enter the Item id you want to edit</label>
+               <br>
+               <input type="number" class="numberFieldStyle" name="id" placeholder="Enter the Item ID" required>
+               </p>
+               <input class="button" type="submit" value="Edit Item">
+      </div>
+
+  </form> 
+</body>
+</html>
+{% endblock %}

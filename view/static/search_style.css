@@ -1,0 +1,76 @@
+body
+{
+    text-align:center;
+}
+
+.container
+{
+    font-size:25px;
+    font-family:t100f;
+}
+
+.container p
+{
+    font-weight:bold;
+}
+
+.container h1
+{
+    font-family:apu;
+    font-size:30px;
+    padding-top: 5%;
+}
+.dropdownStyle{
+    font-size: 70%;
+    font-weight: bolder;
+}
+input[type=date].textFieldStyle{
+    font-size: 70%;
+}
+.dropdownMenu{
+    font-size: 100%;
+    font-weight: bolder;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
+    width: auto;
+    font-size: medium;
+}
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
+    text-indent: 2%;
+}
+.link
+{
+    font-family:'Times New Roman', Times, serif;
+    border-style: double;
+}
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
+tr td
+{
+    width: 47%;
+    font-family:t100f;
+    font-weight:none !important;
+    text-align:none !important;
+    border-style:none !important;
+    border-color:none !important;
+    padding:0px !important;
+    color:none !important;
+    background: none !important;
+}
+
+tr:first-child td
+{
+    background: none !important;
+}

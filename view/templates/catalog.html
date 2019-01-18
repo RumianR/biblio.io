@@ -1,0 +1,174 @@
+{% extends 'home.html' %}
+{% block content %}
+<script>
+$(document).ready(function(){
+    $('#book_table').show();
+    $('#magazine_table').hide();
+    $('#movie_table').hide();
+    $('#music_table').hide();
+    $( "#catalog_select" ).change(function() {
+        if(this.value == "1"){
+            $('#book_table').show();
+            $('#magazine_table').hide();
+            $('#movie_table').hide();
+            $('#music_table').hide();	
+        }
+        if(this.value == "2"){
+            $('#book_table').hide();
+            $('#magazine_table').show();
+            $('#movie_table').hide();
+            $('#music_table').hide();
+        }
+        if(this.value == "3"){
+            $('#book_table').hide();
+            $('#magazine_table').hide();
+            $('#movie_table').show();
+            $('#music_table').hide();
+        }
+        if(this.value == "4"){
+            $('#book_table').hide();
+            $('#magazine_table').hide();
+            $('#movie_table').hide();
+            $('#music_table').show();
+        }   
+    });
+});
+</script>
+
+<h4 id="catalog_title">Catalog</h4>
+Show for: 
+<select id="catalog_select">
+    <option value="1">Books</option>
+    <option value="2">Magazines</option>
+    <option value="3">Movies</option>
+    <option value="4">Music</option>
+</select>
+
+<div id="book_table">
+{% if books or length != 0 %}
+    <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
+    <table>
+        <tr class="row_header">
+            <td>ID</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Pages</td>
+            <td>Publisher</td>
+            <td>Year Published</td>
+            <td>Language</td>
+            <td>ISBN_10</td>
+            <td>ISBN_13</td>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.num_pages}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.year_published}}</td>
+            <td>{{book.language}}</td>
+            <td>{{book.isbn_10}}</td>
+            <td><span style="white-space: nowrap;">{{book.isbn_13}}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+</div>
+<br><br>
+
+<div id="magazine_table">
+{% if magazines or length != 0 %}
+    <h6 class="table_title"><img src="../static/images/magazine.png"> MAGAZINES</h6>
+    <table>
+        <tr class="row_header">
+            <td>ID</td>
+            <td>Title</td>
+            <td>Publisher</td>
+            <td>Year Published</td>
+            <td>Language</td>
+            <td>ISBN_10</td>
+            <td>ISBN_13</td>
+        </tr>
+        {% for magazine in magazines %}
+        <tr>
+            <td>{{magazine.id}}</td>
+            <td>{{magazine.title}}</td>
+            <td>{{magazine.publisher}}</td>
+            <td>{{magazine.year_published}}</td>
+            <td>{{magazine.language}}</td>
+            <td>{{magazine.isbn_10}}</td>
+            <td><span style="white-space: nowrap;">{{magazine.isbn_13}}</span></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<br><br>
+</div>
+
+
+<div id="movie_table">
+{% if movies or length != 0%}
+    <h6 class="table_title"><img src="../static/images/movie.png"> MOVIES</h6>
+    <table>
+        <tr class="row_header">
+            <td>ID</td>
+            <td>Title</td>
+            <td>Director</td>
+            <td>Producer</td>
+            <td>Actors</td>
+            <td>Languages</td>
+            <td>Subtitles</td>
+            <td>Dubbed</td>
+            <td>Release Date</td>
+            <td>Runtime</td>
+        </tr>
+        {% for movie in movies %}
+        <tr>
+            <td>{{movie.id}}</td>
+            <td>{{movie.title}}</td>
+            <td>{{movie.director}}</td>
+            <td>{{movie.producer}}</td>
+            <td>{{movie.actors}}</td>
+            <td>{{movie.languages}}</td>
+            <td>{{movie.subtitles}}</td>
+            <td>{{movie.dubbed}}</td>
+            <td><span style="white-space: nowrap;">{{movie.release_date}}</span></td>
+            <td>{{movie.runtime}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<br><br>
+</div>
+
+
+<div id="music_table">
+{% if musics or length != 0 %}
+    <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
+    <table>
+        <tr class="row_header">
+            <td>ID</td>
+            <td>Title</td>
+            <td>Artist</td>
+            <td>Label</td>
+            <td>Type</td>
+            <td>Release Date</td>
+            <td>ASIN</td>
+        </tr>
+        {% for music in musics %}
+        <tr>
+            <td>{{music.id}}</td>
+            <td>{{music.title}}</td>
+            <td>{{music.artist}}</td>
+            <td>{{music.label}}</td>
+            <td>{{music.mediaType}}</td>
+            <td><span style="white-space: nowrap;">{{music.release_date}}</span></td>
+            <td>{{music.asin}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<br><br>
+</div>
+{% endblock %}

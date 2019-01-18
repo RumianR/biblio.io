@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+html {
+	background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+
+}
+
+.bodyOfContent
+{
+    text-align:center;
+}
+
+.container
+{
+    font-size:25px;
+    font-family:t100f;
+}
+
+.container p
+{
+    font-weight:bold;
+}
+
+.container h1
+{
+    font-family:apu;
+    font-size:30px;
+    padding-top: 5%;
+}
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
+.dropdownStyle{
+    font-size: 70%;
+    font-weight: bolder;
+}
+.dropdownMenu{
+    font-size: 100%;
+    font-weight: bolder;
+}
+.link
+{
+    font-family:'Times New Roman', Times, serif;
+    border-style: double;
+}
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
+    text-indent: 2%;
+}
+input[type=password].textFieldStyle{
+    font-size: 70%;
+    text-indent: 2%;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
+    width:auto !important;
+    font-size: medium;
+}

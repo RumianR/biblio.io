@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block content %}
+<html lang="en">
+<head>
+  <title>Account registered</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='success.css')}}">
+</head>
+<body>
+  <div class="container" style="padding-top: 50px;">
+    <h1 class="container titles">Success</h1>
+    </br>
+    <p id="user_login_redirect">You have successfully registered an Admin.</p>
+  </div>
+</body>
+</html>
+{% endblock %}
